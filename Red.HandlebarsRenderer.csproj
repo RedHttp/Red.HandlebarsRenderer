@@ -5,14 +5,17 @@
     <Version>1.1.0</Version>
     <Authors>Malte Rosenbjerg</Authors>
     <Company>Malte Rosenbjerg</Company>
-    <Copyright>Copyright © Rosenbjerg 2018</Copyright>
+    <Copyright>Copyright © Rosenbjerg 2019</Copyright>
     <PackageLicenseUrl>https://github.com/rosenbjerg/Red.HandlebarsRenderer/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/rosenbjerg/Red.HandlebarsRenderer</PackageProjectUrl>
     <PackageIconUrl>https://rosenbjerg.dk/red/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/rosenbjerg/Red.HandlebarsRenderer</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>red redhttpserver handlebars template render rhttpserver</PackageTags>
-    <PackageReleaseNotes>Change to NET Standard</PackageReleaseNotes>
+    <PackageReleaseNotes>Changed API to be consistent to Red v4</PackageReleaseNotes>
+    <PackageVersion>2.0.0</PackageVersion>
+    <Title>Red.HandlebarsRenderer</Title>
+    <Description>Extension for Red for rendering Handlebars templates as responses</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="1.9.5" />

@@ -42,12 +42,17 @@ namespace Red.HandlebarsRenderer
         public static HandlebarsCache Instance => _instance ?? (_instance = new HandlebarsCache());
         private static HandlebarsCache _instance;
 
-        public Action<TextWriter, object> GetRenderer(string filePath)
+        public Action<TextWriter, object> GetRenderer(string filePath, bool cacheRenderers)
         {
-            if (_cachedFiles.TryGetValue(filePath, out var renderer)) 
+            if (cacheRenderers && _cachedFiles.TryGetValue(filePath, out var renderer))
+            {
                 return renderer.Renderer;
+            }
             renderer = new HandlebarsCacheFile(filePath);
-            _cachedFiles.TryAdd(filePath, renderer);
+            if (cacheRenderers)
+            {
+                _cachedFiles.TryAdd(filePath, renderer);
+            }
             return renderer.Renderer;
         }
         
