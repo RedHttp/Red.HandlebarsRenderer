@@ -12,13 +12,13 @@
     <RepositoryUrl>https://github.com/rosenbjerg/Red.HandlebarsRenderer</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>red redhttpserver handlebars template render rhttpserver</PackageTags>
-    <PackageReleaseNotes>Changed API to be consistent to Red v4</PackageReleaseNotes>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageReleaseNotes>Updated Red dependency to 4.0.0</PackageReleaseNotes>
+    <PackageVersion>2.0.1</PackageVersion>
     <Title>Red.HandlebarsRenderer</Title>
     <Description>Extension for Red for rendering Handlebars templates as responses</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="1.9.5" />
-    <PackageReference Include="RHttpServer" Version="3.5.2" />
+    <PackageReference Include="RHttpServer" Version="4.0.0" />
   </ItemGroup>
 </Project>

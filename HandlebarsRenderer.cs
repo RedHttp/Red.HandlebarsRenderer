@@ -17,19 +17,20 @@ namespace Red.HandlebarsRenderer
         /// <param name="renderParams">The render parameter object which will be passed to the template renderer</param>
         /// <param name="cacheRenderers">Whether to cache renderers. Recommended</param>
         /// <param name="status">The status code for the response</param>
-        public static Task RenderTemplate(this Response response, string filePath, object renderParams, bool cacheRenderers = true,
+        public static Task<HandlerType> RenderTemplate(this Response response, string filePath, object renderParams, bool cacheRenderers = true,
             HttpStatusCode status = HttpStatusCode.OK)
         {
-            response.UnderlyingResponse.StatusCode = (int) status;
-            response.UnderlyingResponse.ContentType = "text/html";
+            response.AspNetResponse.StatusCode = (int) status;
+            response.AspNetResponse.ContentType = "text/html";
             var renderer = HandlebarsCache.Instance.GetRenderer(filePath, cacheRenderers);
-            using (var writer = new StreamWriter(response.UnderlyingResponse.Body))
+            using (var writer = new StreamWriter(response.AspNetResponse.Body))
             {
                 renderer(writer, renderParams);
             }
 
-            response.Closed = true;
-            return Task.CompletedTask;
+            return _cachedResult;
         }
+
+        private static readonly Task<HandlerType> _cachedResult = Task.FromResult(HandlerType.Final);
     }
 }
