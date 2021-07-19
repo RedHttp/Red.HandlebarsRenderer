@@ -1,3 +1,5 @@
+## The RedHttp project is no longer maintained. See [Carter](https://github.com/CarterCommunity/Carter) for a similar low-ceremony experience.
+
 # Handlebars template renderer extension for RedHttpServer
 ### Handlebars renderer extension for RedHttpServer using [Handlebars.Net](https://github.com/rexm/Handlebars.Net)
 [![GitHub](https://img.shields.io/github/license/redhttp/red.handlebarsrenderer)](https://github.com/RedHttp/Red.HandlebarsRenderer/blob/master/LICENSE.md)
